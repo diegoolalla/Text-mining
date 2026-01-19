@@ -43,10 +43,17 @@ def validate_notebook(notebook_path):
             "Predicciones"
         ]
         
-        notebook_text = json.dumps(nb).lower()
+        # Buscar en las celdas directamente en lugar de serializar todo
         print(f"\nSecciones encontradas:")
         for section in sections:
-            found = section.lower() in notebook_text
+            found = False
+            section_lower = section.lower()
+            for cell in nb['cells']:
+                if cell['cell_type'] == 'markdown':
+                    cell_text = ''.join(cell['source']).lower()
+                    if section_lower in cell_text:
+                        found = True
+                        break
             status = "✓" if found else "✗"
             print(f"  {status} {section}")
         
