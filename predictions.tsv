@@ -1,0 +1,6 @@
+text	true_label	predicted_label	probability_class_0	probability_class_1
+Los cardiólogos monitorean pacientes con problemas del corazón	1	1	0.1234	0.8766
+La vacunación avanza en diferentes países del mundo	0	0	0.9012	0.0988
+Los radiólogos analizan las imágenes de tórax de pacientes COVID	1	1	0.0789	0.9211
+Es importante mantener una buena alimentación	0	0	0.8543	0.1457
+Los anestesistas son clave en las UCI	1	1	0.1098	0.8902
